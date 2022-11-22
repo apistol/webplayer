@@ -5,13 +5,14 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'blue': '#1fb6ff',
       'black':'#171719',
       'gray':'#212124',
+      'grayer':"#9898A6",
+      'white':'#FFFFFF',
+      'aqua':"#00FFFF"
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      inter: ['Inter', 'sans-serif'],
     },
     extend: {
       spacing: {
