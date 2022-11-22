@@ -5,7 +5,7 @@ const AllAlbums = () => {
   return (
     <div>
         {albums.map(album => (<div>
-            
+            <img src={}/>
         </div>))}
     </div>
   )
