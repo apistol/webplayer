@@ -12,7 +12,7 @@ const Single = ({ isDesktop }) => {
   return (
     <div className='p-10'>
       <div className='flex singleCover'>
-        <img src={album.image} className={isDesktop ? "w-92" : "w-40"} />
+        <img src={album.image} className={isDesktop ? "w-92" : "w-40"} alt="Album"/>
         <div className='w-full' style={{ backgroundImage: `url(${album.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className='flex flex-col items-start justify-center w-full h-full py-10 pl-10 singleCover'>
             <h1 className='text-3xl text-white'>{album.title}</h1>

@@ -24,7 +24,7 @@ const SearchBar = ({ isDesktop }) => {
                 </div>}
                 {isDesktop && <span className='p-2 rounded-full bg-gray'><BsChevronLeft color="#FFF" size={24} /></span>}
                 {!isDesktop && <>
-                    <img className="inline-block w-6 h-6 rounded-full" src={profileImage} alt="Profile image" />
+                    <img className="inline-block w-6 h-6 rounded-full" src={profileImage} alt="Profile" />
                     <Link to={getURL}><BsThreeDots color='#FFF' size={24} className='ml-5' /></Link>
                 </>}
             </div>

@@ -6,7 +6,7 @@ const Song = ({ song }) => {
 
   return (
     <div className='flex items-center justify-around'>
-        <img src={`${song.image}`} className="w-10"/>
+        <img src={`${song.image}`} className="w-10" alt="Song"/>
         <p className='w-full pl-5 font-semibold text-white' >{song.title}</p>
         <p className='w-full text-white'>{song.description}</p>
         <Link to={`/song/${song.id}`}>
