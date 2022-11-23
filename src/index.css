@@ -19,19 +19,66 @@ body {
     /* background-color: var(--theme-color); */
 }
 
+/* Hide scrollbar for Chrom, IE, Edge and Firefox */
 *::-webkit-scrollbar {
     display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
 * {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
+
 
 #searchSong{
-    background: none;
+    background: none!important;
+}
+
+.albumCoverBackground{
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+}
+
+.albumCoverBlur{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(24px);
+    position: relative;
+}
+
+.albumCoverBlur > span {
+    position: absolute;
+    top:-20px;
+    right:20px;
+}
+
+
+.singleCover{
+    backdrop-filter: blur(24px)!important;
 
 }
+
+#loader{
+    position: fixed;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    
+}
+
+#loader svg {
+    animation: mymove 3s forwards;
+}
+
+
+@keyframes mymove {
+    100% {transform: rotate(3200deg) }
+  }
+

@@ -9,7 +9,8 @@ module.exports = {
       'gray':'#212124',
       'grayer':"#9898A6",
       'white':'#FFFFFF',
-      'aqua':"#00FFFF"
+      'aqua':"#00FFFF",
+      'red':"#EF2F62"
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
