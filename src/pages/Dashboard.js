@@ -2,13 +2,9 @@ import React from 'react'
 import AllAlbums from '../components/AllAlbums'
 import Player from '../components/Player'
 
-const Dashboard = ({isDesktop}) => {
+const Dashboard = () => {
   return (
-    <div>
-      <AllAlbums isDesktop={isDesktop}/>
-      <Player />
-    </div>
-
+      <AllAlbums/>
   )
 }
 

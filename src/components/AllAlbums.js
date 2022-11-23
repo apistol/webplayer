@@ -1,26 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import { albums } from '../assets/utils'
-import useMediaQuery from '../hooks/useMediaQuery'
 import Item from './album/Item'
 
-const AllAlbums = ({isDesktop}) => {
+const AllAlbums = () => {
 
-    const [cols, setCols] = useState("1")
-    const mobile = useMediaQuery("(max-width:700px)")
-    const tablet = useMediaQuery("(min-width:700px) and (max-width:1000px)")
-    const desktop = useMediaQuery("(min-width:1000px)")
-    useEffect(() => {
-        if(mobile){ return setCols("1")}
-        if(tablet){ return setCols("2")}
-        if(desktop){ return setCols("4")}
-
-    }, [mobile, tablet])
-
-    console.log(cols)
-
+   
     return (
-        <div className='h-full mt-12 overflow-y-scroll' style={{ height: "75vh", width: !isDesktop ? "80%": "inherit"}}>
+        <div className='h-full px-10 pt-12 overflow-y-scroll bg-black' style={{ height: "75vh"}}>
 
             <div className='flex justify-between w-full'>
                 <div className='text-white'>Section Title</div>
@@ -29,7 +16,7 @@ const AllAlbums = ({isDesktop}) => {
                     <span className='block p-2 ml-5 rounded-full bg-gray'><BsChevronRight color="#FFF" size={24} /></span>
                 </div>
             </div>
-            <div className={`grid grid-cols-${cols} gap-10 mt-5 overflow-x-scroll`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 overflow-x-scroll`}>
                 {albums.map(album => <Item key={album} album={album} size={"3"} />)}
             </div>
 
@@ -41,7 +28,7 @@ const AllAlbums = ({isDesktop}) => {
                     <span className='block p-2 ml-5 rounded-full bg-gray'><BsChevronRight color="#FFF" size={24} /></span>
                 </div>
             </div>
-            <div className={`grid grid-cols-${cols} gap-10 mt-5 overflow-x-scroll`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 overflow-x-scroll`}>
                 {albums.map(album => <Item key={album} album={album} size={"3"} />)}
             </div>
 
@@ -53,7 +40,7 @@ const AllAlbums = ({isDesktop}) => {
                     <span className='block p-2 ml-5 rounded-full bg-gray'><BsChevronRight color="#FFF" size={24} /></span>
                 </div>
             </div>
-            <div className={`grid grid-cols-${cols} gap-10 mt-5 overflow-x-scroll`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 overflow-x-scroll`}>
                 {albums.map(album => <Item key={album} album={album} size={"3"} />)}
             </div>
         </div>

@@ -16,7 +16,7 @@ import { ImSpinner2 } from "react-icons/im";
 
 function App() {
 
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const isDesktop = useMediaQuery("(min-width: 996px)")
   const [loader, setloader] = useState(true)
 
   useEffect(() => {
@@ -32,23 +32,23 @@ function App() {
         <ImSpinner2 color="#FFF" size={50} />
       </div>}
       <div className='flex justify-center'>
-        <div className={`${isDesktop && "w-2/12"}`}>
-          {isDesktop && <SideBar />}
+        <div className={`${isDesktop ? "w-2/12" : "none"}`}>
+          {isDesktop && <SideBar isDesktop={isDesktop}/>}
         </div>
-        <div className={`${isDesktop && "w-10/12"}`}>
+        <div className={`${isDesktop ? "w-10/12" : "w-full"}`}>
           <Router>
             <SearchBar isDesktop={isDesktop} />
             <Routes>
-              <Route path="/" element={<Dashboard isDesktop={isDesktop} />} />
-              <Route path="/single/:id" element={<Single />} />
-              <Route path="/song/:songId" element={<Listen />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/single/:id" element={<Single  isDesktop={isDesktop} />} />
+              <Route path="/song/:songId" element={<Listen isDesktop={isDesktop} />} />
               <Route path="/menu" element={<Menu isDesktop={isDesktop} />} />
             </Routes>
           </Router>
         </div>
       </div>
 
-
+      <Player isDesktop={isDesktop}/>
 
     </div>
   );
